@@ -1,0 +1,259 @@
+body {
+box-sizing: border-box;
+  background-image: url("./Images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position-y: -200px;
+  height: 100vh;
+  background-size: cover;
+  margin: 0;
+  overflow: hidden;
+}
+
+.car-container {
+  position: relative;
+  margin-top: 200px;
+  left: 50%;
+  top: 270px;
+  width: 100%;
+}
+
+.top,
+.body,
+.front-tire,
+.back-tire {
+  position: absolute;
+}
+
+.top {
+  width: 70px;
+  left: 20px;
+  top: -5px;
+  border-top-left-radius: 50px;
+  height: 40px;
+  /* position: relative; */
+  background: rgb(124, 117, 117);
+}
+
+.top::after {
+  content: "";
+  display: block;
+  width: 40px;
+  background: rgb(124, 117, 117);
+  position: absolute;
+  left: 70px;
+  height: 40px;
+  border-top-right-radius: 40px;
+}
+
+.body {
+  width: 190px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 50px;
+  left: -30px;
+  top: 20px;
+  background: rgb(145, 74, 181);
+}
+
+.front-tire {
+  background: blue;
+  width: 30px;
+  height: 30px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px rgb(45, 45, 45);
+  justify-content: center;
+  top: 50px;
+  border-radius: 50px;
+}
+
+
+
+@keyframes front-tire {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+@keyframes back-tire {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+.front-tire::before {
+  content: "✖️";
+  animation: front-tire 600ms linear 100ms infinite;
+  font-size: 20px;
+  
+  position: absolute;
+}
+.back-tire {
+  background: blue;
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 0 10px rgb(45, 45, 45);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 100px;
+  top: 50px;
+  border-radius: 50px;
+}
+
+.back-tire::before {
+  content: "✖️";
+  animation: front-tire 600ms linear 100ms infinite;
+  font-size: 20px;
+  position: absolute;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.road {
+  position: absolute;
+  bottom: -450px;
+  width: 100%;
+  /* left: -50%; */
+  background: rgb(100, 111, 126);
+  height: 100px;
+}
+
+
+.block {
+  left: calc(var(--left) * -1%);
+  top: 150px;
+  background: rgb(28, 107, 123);
+  width: 10px;
+  height: 200px;
+  z-index: -20;
+  position: absolute;
+}
+
+.block::after {
+  content: "";
+  background: rgb(28, 107, 123);
+  width: 50px;
+  left: -20px;
+  border-radius: 30px;
+  height: 30px;
+  position: absolute;
+}
+
+
+.block::before {
+  content: "";
+  background: rgb(255, 255, 255);
+  width: 30px;
+  left: -10px;
+  top: 10px;
+  box-shadow: 0 0 50px white;
+  backdrop-filter: blur(1);
+  z-index: 2;
+  border-radius: 30px;
+  height: 20px;
+  position: absolute;
+}
+
+
+.window {
+  position: absolute;
+  left: 50px;
+}
+
+.window::before{
+  content: "";
+  position: absolute;
+  border-top-left-radius: 50px;
+  left: -10px;
+  width: 37px;
+  height: 20px;
+  background: rgb(0, 0, 0);
+}
+.window::after{
+  content: "";
+  border-top-right-radius: 40px;
+  width: 25px;
+  height: 20px;
+  left: 30px;
+  position: absolute;
+  background:rgb(0, 0, 0);
+}
+
+.lights {
+  position: absolute;
+}
+
+.lights::before {
+  content: "";
+  position: absolute;
+  background: rgb(255, 255, 255);
+  width: 10px;
+  box-shadow: 0 0 50px white;
+  height: 7px;
+  border-radius: 30px;
+  top: 30px;
+  left: -16px;
+}
+.lights::after {
+  content: "";
+  position: absolute;
+  background: rgb(197, 176, 176);
+  width: 10px;
+  box-shadow: 0 0 50px white;
+  height: 7px;
+  border-radius: 30px;
+  top: 55px;
+  left: 147px;
+}
+
+.door{
+  position: absolute;
+}
+
+.door::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.149);
+  position: absolute;
+  width: 3px;
+  top: 20px;
+  left: 77px;
+  height: 30px;
+}
+.door::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.149);
+  position: absolute;
+  height: 1px;
+  top: 50px;
+  left: -28.8px;
+  width: 187px;
+}
+
+.handle{
+  position: absolute;
+}
+
+.handle::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.699);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.566);
+  position: absolute;
+  top: 30px;
+  border-bottom-right-radius: 5px;
+  left: 60px;
+  width: 4px;
+  height: 4px;
+}
